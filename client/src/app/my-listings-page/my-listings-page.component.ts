@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fakeMyListings } from '../fake-data';
-import { Listing } from '../types'; 
+import { Listing } from '../types';
 
 @Component({
   selector: 'app-my-listings-page',
@@ -8,7 +8,6 @@ import { Listing } from '../types';
   styleUrls: ['./my-listings-page.component.css']
 })
 export class MyListingsPageComponent implements OnInit {
-
   listings: Listing[] = [];
 
   constructor() { }
@@ -18,7 +17,6 @@ export class MyListingsPageComponent implements OnInit {
   }
 
   onDeleteClicked(listingId: string): void {
-    alert(`Deleting your listing with id ${listingId}`)
+    alert(`Deleting your listing with id ${listingId}`);
   }
-
 }

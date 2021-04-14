@@ -4,20 +4,17 @@
         <label>
             Your email address:
             <input name="email" [(ngModel)]="email" />
-        </label> 
+        </label>
     </div>
     <div>
         <label>
-            Your Message:
+            Your message:
             <textarea
-              name="message"
-              row="5"
-              cols="20"
-              [(ngModel)]="message"></textarea>
-
+                name="message"
+                rows="5"
+                cols="20"
+                [(ngModel)]="message"></textarea>
         </label>
-
     </div>
     <button (click)="sendMessage()">Send</button>
-
 </div>
