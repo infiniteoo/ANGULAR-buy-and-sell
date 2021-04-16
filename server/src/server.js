@@ -5,7 +5,7 @@ import {db} from './database';
 let server;
 
 const start = async () => {
-    let server = Hapi.server({
+    server = Hapi.server({
         port: 8000,
         host: 'localhost',
     });
