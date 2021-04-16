@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Listing } from './types';
+
+const httpOptions = { 
+  headers: new HttpHeaders({
+    'Content-type': 'application/json',
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +20,18 @@ export class ListingsService {
 
   getListings(): Observable<Listing[]> {
     return this.http.get<Listing[]>('/api/listings');
+  }
+
+  getListingById(id: string): Observable<Listing> {
+    return this.http.get<Listing>(`/api/listings/${id}`);
+  }
+
+  addViewToListing(id: string): Observable<Listing> {
+    return this.http.post<Listing>(
+      `/api/listings/${id}/add-view`,
+    {},
+    httpOptions,
+    )
   }
 }
 
