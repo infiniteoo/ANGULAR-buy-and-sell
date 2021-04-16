@@ -20,5 +20,5 @@ export const updateListingRoute = {
             [id, userId],
         );
         return results[0];
-    }
+    } 
 }
